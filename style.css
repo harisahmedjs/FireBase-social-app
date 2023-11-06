@@ -2,8 +2,46 @@
     margin: 0%;
     padding: 0%;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 .inner-card{
     
     margin-top: 13px;
+}
+body{
+ background: linear-gradient(to right, #159957, #155799);
+ font-family: 'Quicksand', sans-serif;
+}
+ .text1{
+font-size: xx-large;
+
+
+}
+.first-div{
+background: rgba(0,0,0,0.5);
+margin: auto;
+margin-top: 10%; 
+text-align: center;
+height: 50%; 
+width: 20%;
+
+padding: 10px;
+}
+
+#form{
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+    color:black;
+}
+#em{
+    margin-top:20px;
+}
+#pass{
+    margin-top: 20px;
+}
+
+.btn2{
+    background-color: #155799;
+    margin-top: 20px;
 }

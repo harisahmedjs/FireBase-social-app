@@ -51,6 +51,7 @@ const div=document.querySelector('#card')
 
 const arr=[]
 async function getDataFromFirestore() {
+  arr.length=0
  const querySnapshot = await getDocs(collection(db, "posts"));
 querySnapshot.forEach((doc) => {
  arr.push(doc.data())
