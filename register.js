@@ -4,7 +4,7 @@ import {auth} from'./config.js'
 
 const email = document.querySelector('#em')
 const password = document.querySelector('#pass')
-const form = document.querySelector('form')
+const form = document.querySelector('#form')
  
 
 

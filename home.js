@@ -3,6 +3,10 @@ import { auth,db } from "./config.js";
 import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"; 
 
 
+const title =document.querySelector('#title')
+const des =document.querySelector('#des')
+const fom=document.querySelector('#fom')
+const div=document.querySelector('#card')
 const button=document.querySelector('#btn')
 
 onAuthStateChanged(auth, (user) => {
@@ -43,23 +47,20 @@ button.addEventListener('click',()=>{
   });
 })
 // adding post
-const title =document.querySelector('#title')
-const des =document.querySelector('#des')
-const forms=document.querySelector('#fom')
-const div=document.querySelector('#card')
+
 
 
 const arr=[]
 async function getDataFromFirestore() {
-  arr.length=0
+  arr.length=0  
  const querySnapshot = await getDocs(collection(db, "posts"));
 querySnapshot.forEach((doc) => {
- arr.push(doc.data())
+ arr.push(doc.data())  
  
 });
 console.log(arr)
 arr.map((item)=>{
-div.innerHTML += `<div class='inner-card'>
+div.innerHTML += `<div class='inner-card'>  
 <p>Title:${item.Title}<p>
 <p>Description:${item.Description}<p>
 </div>`
@@ -72,10 +73,8 @@ getDataFromFirestore()
 
 
 
-
-
-forms.addEventListener('submit',async(event)=>{
-  event.preventDefault()
+fom.addEventListener('submit', async(e)=>{
+  e.preventDefault();
   div.innerHTML =''
   // console.log(title.value)
   // console.log(des.value)
@@ -97,6 +96,7 @@ forms.addEventListener('submit',async(event)=>{
     console.error("Error adding document: ", e);
   }
 })
+
 
 
 
